@@ -95,8 +95,43 @@ We will create following JS files to run angular js in the browser
 
 **vendor.ts** - this file consists imports of RXJS and Angular libraries. This file is the entry point to generate vendor.js
 
+Create folder `./src/` and create following files.
+
+```
+\\ ./src/main.ts
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+```
+
+```
+\\ ./src/index.html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="/">
+    <title>Angular With Webpack and Typescript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <my-app>Loading...</my-app>
+
+    <script src="../../dist/polyfills.js"></script>
+    <script src="../../dist/libs.js"></script>
+    <script src="../../dist/app.js"></script>
+</body>
+
+</html>
+```
+
+
 ## Referances/Tutorials
 
 *   [Angular 2 Project Setup With Webpack For Development And Production](http://blog.sodhanalibrary.com/2016/10/angular2-project-setup-with-webpack-for.html#.WS0hg-uGOUl)
 *   [Angular 2 with Webpack](http://www.dotnetcurry.com/angularjs/1320/using-webpack-bundling-with-angular-2)
 *   [Optimize your Angular 2 Application with Tree Shaking](http://blog.rangle.io/optimize-your-angular2-application-with-tree-shaking/)
+*   [Setting Up Angular 2 with Webpack](https://semaphoreci.com/community/tutorials/setting-up-angular-2-with-webpack)

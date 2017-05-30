@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
+
 @Component({
     selector: 'my-app',
-    template: `<div>Test 1 2222</div>`,
+    template: `<div>Hello Angular 4</div>`,
     styleUrls: []
-})
- 
+}) 
 export class AppComponent { }
  

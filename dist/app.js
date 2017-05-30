@@ -69,7 +69,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'my-app',
-        template: "<div>Test 1 2222</div>",
+        template: "<div>Hello Angular 4</div>",
         styleUrls: []
     })
 ], AppComponent);
