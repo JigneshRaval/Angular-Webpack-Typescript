@@ -1,12 +1,11 @@
-var webpack = require('webpack');
-
+const webpack = require('webpack');
 const path = require('path');
-const rootDir = path.resolve(__dirname, '..');
+//const rootDir = path.resolve(__dirname, '..');
 
 module.exports = {
     entry: {
         'app': './src/main.ts',
-        'libs': './deps/stdpkgs.ts', // Vendor files like jQuery, Lodash, Bootstrap etc. including Angular and RxJS
+        'libs': './deps/vendor.ts', // Libs or Vendor files like jQuery, Lodash, Bootstrap etc. including Angular and RxJS
         'polyfills': './deps/polyfills.ts' // Polyfills like Core.js, Zone.js
     },
     output: {

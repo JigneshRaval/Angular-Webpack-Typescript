@@ -121,7 +121,7 @@ const path = require('path');
 module.exports = {
     entry: {
         'app': './src/main.ts',
-        'libs': './deps/stdpkgs.ts', // Vendor files like jQuery, Lodash, Bootstrap etc. including Angular and RxJS
+        'libs': './deps/vendor.ts', // Libs or Vendor files like jQuery, Lodash, Bootstrap etc. including Angular and RxJS
         'polyfills': './deps/polyfills.ts' // Polyfills like Core.js, Zone.js
     },
     output: {
@@ -231,7 +231,10 @@ export class AppComponent { }
 </html>
 ```
 
+## Polyfills and Vendor Libraries ( see webpack.config.js to import following files and will compile it to dist folder )
+
 Following two files will help webpack to import Angular 2/4 Modules and other dependancies like core-js, zone.js, RxJS.
+
 Webpack will compile following files into .js files which you need to include in index.html as shown in previous code.
 
 ```
@@ -251,7 +254,7 @@ import 'zone.js/dist/long-stack-trace-zone';
 
 
 ```
-// ./deps/stdpkgs.ts
+// ./deps/vendor.ts
 //----------------------------
 
 // Angular
