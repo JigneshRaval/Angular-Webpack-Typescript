@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
         <div>Hello Angular 4</div>
 
         <mousewheel-directive-example-component></mousewheel-directive-example-component>
+
+        <dynamic-component-main></dynamic-component-main>
     `,
     styleUrls: []
 }) 

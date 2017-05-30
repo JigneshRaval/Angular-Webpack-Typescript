@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { MouseWheelDirective } from './example-directive-mouse-events/mousewheel.directive'; // Directive Example using HostListener
 import { MouseWheelDirectiveExampleComponent } from './example-directive-mouse-events/mousewheel.component';
 
+import HelloWorldComponent from './example-dynamic-component/hello-world.component';
+import WorldHelloComponent from './example-dynamic-component/world-hello.component';
+import DynamicComponent from './example-dynamic-component/dynamic.component';
+import MainDynamicComponent from './example-dynamic-component/dynamic-component.main';
 
 @NgModule({
     imports: [
@@ -16,7 +20,8 @@ import { MouseWheelDirectiveExampleComponent } from './example-directive-mouse-e
     declarations: [
         // Declaration Metadata lists the components, directives , services etc that are part of this module.
         AppComponent,
-        MouseWheelDirective, MouseWheelDirectiveExampleComponent
+        MouseWheelDirective, MouseWheelDirectiveExampleComponent,
+        HelloWorldComponent, WorldHelloComponent, DynamicComponent, MainDynamicComponent
     ],
     bootstrap: [
         // Bootstrap Metadata identifies the root component of the module. 

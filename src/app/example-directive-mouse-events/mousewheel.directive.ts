@@ -1,3 +1,5 @@
+// Tutorial Soruce : http://blog.sodhanalibrary.com/2016/10/angular-2-directive-for-mouse-wheel.html#.WS12HeuGOUk
+
 import { Directive, EventEmitter, Output, HostListener } from '@angular/core';
 
 @Directive({
