@@ -122,7 +122,9 @@ We will create following JS files to run angular js in the browser
 Create folder `./src/` and create following files.
 
 ```
-\\ ./src/main.ts
+// ./src/main.ts
+//----------------------------
+
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 
@@ -130,7 +132,44 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 ```
 
 ```
-\\ ./src/index.html
+// ./src/app/app.module.ts
+//----------------------------
+
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+
+@NgModule({
+    imports: [
+        BrowserModule
+    ],
+    declarations: [
+        AppComponent
+    ],
+    bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+```
+
+```
+// ./src/app/app.component.ts
+//----------------------------
+
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'my-app',
+    template: `<div>Hello Angular 4</div>`,
+    styleUrls: []
+}) 
+export class AppComponent { }
+ 
+```
+
+```
+// ./src/index.html
+//----------------------------
+
 <!DOCTYPE html>
 <html>
 
@@ -156,7 +195,9 @@ Following two files will help webpack to import Angular 2/4 Modules and other de
 Webpack will compile following files into .js files which you need to include in index.html as shown in previous code.
 
 ```
-\\ ./deps/polyfills.ts
+// ./deps/polyfills.ts
+//----------------------------
+
 /** Evergreen browsers require these. **/
 import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
@@ -168,8 +209,11 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 import 'zone.js/dist/long-stack-trace-zone';
 ```
 
+
 ```
-\\ ./deps/stdpkgs.ts
+// ./deps/stdpkgs.ts
+//----------------------------
+
 // Angular
 import '@angular/core';
 import '@angular/common';
