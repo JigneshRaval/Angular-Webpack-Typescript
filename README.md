@@ -4,6 +4,30 @@ First install Node.js and NPM or Yarn
 
 Create project folder. Here I have created `Angular-Webpack-Typescript`
 
+## Folder Structure
+
+```
+├── package.json
+
+├── deps // Dependancy container folder
+│   ├── polyfills.ts
+│   └── stdpkgs.ts // or vendor.ts
+
+├── src
+│   ├── app
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   │   └── home
+│   │       ├── home.component.html
+│   │       └── home.component.ts
+│   |── main.ts
+|   └── index.html
+
+├── server.js
+├── tsconfig.json
+└── webpack.config.js
+```
+
 Open command prompt and go inside that folder using `CD` command
 
 Create `package.json` file in this project folder
@@ -128,6 +152,40 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 </html>
 ```
 
+Following two files will help webpack to import Angular 2/4 Modules and other dependancies like core-js, zone.js, RxJS.
+Webpack will compile following files into .js files which you need to include in index.html as shown in previous code.
+
+```
+\\ ./deps/polyfills.ts
+/** Evergreen browsers require these. **/
+import 'core-js/es6/reflect';
+import 'core-js/es7/reflect';
+
+/**
+ * Zone JS is required by Angular itself.
+ */
+import 'zone.js/dist/zone';  // Included with Angular CLI.
+import 'zone.js/dist/long-stack-trace-zone';
+```
+
+```
+\\ ./deps/stdpkgs.ts
+// Angular
+import '@angular/core';
+import '@angular/common';
+import '@angular/compiler';
+import '@angular/forms';
+import '@angular/http';
+import '@angular/router';
+import '@angular/platform-browser';
+import '@angular/platform-browser-dynamic';
+
+// RxJS
+import 'rxjs';
+
+// Other vendors for example jQuery, Lodash or Bootstrap
+// You can import js, ts, css, sass, ...
+```
 
 ## Referances/Tutorials
 
