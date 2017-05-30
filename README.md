@@ -111,6 +111,46 @@ Now create tsconfig.json file
 
 Create one `webpack.config.js` file which will guide webpack how to load awesome-typescript-loader to compile .ts files
 
+```
+// webpack.config.js
+//--------------------------------------
+
+const webpack = require('webpack');
+const path = require('path');
+
+module.exports = {
+    entry: {
+        'app': './src/main.ts',
+        'libs': './deps/stdpkgs.ts', // Vendor files like jQuery, Lodash, Bootstrap etc. including Angular and RxJS
+        'polyfills': './deps/polyfills.ts' // Polyfills like Core.js, Zone.js
+    },
+    output: {
+        path: path.resolve(__dirname, "dist"),
+        filename: '[name].js',
+        publicPath: "/assets/", // the url to the output directory resolved relative to the HTML page
+        libraryTarget: "umd", // universal module definition
+    },
+    resolve: {
+        extensions: ['.js', '.ts']
+    },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ['app', 'libs', 'polyfills']
+        })
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                loaders: ['awesome-typescript-loader'],
+                exclude: /(node_modules|bower_components)/
+            }
+        ]
+    },
+    devtool: 'source-map'
+};
+```
+
 We will create following JS files to run angular js in the browser
 
 **main.ts** - this is the entry point of the application which bootstraps whole application. index.html will load this file first
