@@ -2,8 +2,12 @@ var http = require('http');
 var fs = require('fs');
 var path = require('path');
 
+const port = process.env.PORT || 3000;
+
+console.log("PORTS --> ", process.env.PORT);
+
 http.createServer(function (request, response) {
-    console.log('request starting... ', request.url);
+    console.log('Request ...: ', __dirname + request.url);
 
     var filePath = '.' + request.url;
     if (filePath == './')
@@ -34,7 +38,8 @@ http.createServer(function (request, response) {
             contentType = 'audio/wav';
             break;
     }
-    console.log("Type :", contentType);
+    
+    console.log(" Type : ", contentType);
     
     fs.readFile(filePath, function(error, content) {
         if (error) {
@@ -56,6 +61,6 @@ http.createServer(function (request, response) {
         }
     });
 
-}).listen(3000);
+}).listen(port);
 
-console.log('Server running at http://127.0.0.1:3000/');
+console.log(`Server running at http://localhost:${port}/`);
