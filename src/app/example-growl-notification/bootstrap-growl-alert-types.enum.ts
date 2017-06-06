@@ -49,3 +49,24 @@ const Color = {
 }
 console.log(String(Color.RED));
 console.log('Color: ', Color.RED)
+
+// Example 4
+var symObj = {};
+var SUCCESS = Symbol();
+
+symObj[SUCCESS] = 'SUCCESS';
+
+console.log("Example 4 : ", symObj[SUCCESS]);
+
+// Example 5
+const directions = {
+    UP   : Symbol( 'UP' ),
+    DOWN : Symbol( 'DOWN' ),
+    LEFT : Symbol( 'LEFT' ),
+    RIGHT: Symbol( 'RIGHT' )
+};
+
+for (let key in directions) {
+    var p = directions[key];
+    console.log(p, Symbol.keyFor(p));
+}
