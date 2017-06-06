@@ -10,7 +10,7 @@ import WorldHelloComponent from './world-hello.component';
   `,
 })
 export default class DynamicComponent {
-    currentComponent = null;
+    currentComponent: any = null;
 
     @ViewChild('dynamicComponentContainer', { read: ViewContainerRef }) dynamicComponentContainer: ViewContainerRef;
 

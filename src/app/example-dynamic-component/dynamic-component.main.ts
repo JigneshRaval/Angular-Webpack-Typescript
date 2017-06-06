@@ -14,7 +14,7 @@ import WorldHelloComponent from './world-hello.component';
   `,
 })
 export default class MainDynamicComponent {
-    componentData = null;
+    componentData: any = null;
 
     createHelloWorldComponent() {
         this.componentData = {
