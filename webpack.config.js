@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 //const rootDir = path.resolve(__dirname, '..');
 
@@ -12,7 +13,7 @@ module.exports = {
 
         path: path.resolve(__dirname, "dist"), // string
         // the target directory for all output files
-        // must be an absolute path (use the Node.js path module) 
+        // must be an absolute path (use the Node.js path module)
 
         filename: '[name].js', // string
         //filename: "[name].js", // for multiple entry points
@@ -38,11 +39,11 @@ module.exports = {
         libraryTarget: "global", // property set to global object
         libraryTarget: "jsonp", // jsonp wrapper
 		*/
-        // the type of the exported library		
+        // the type of the exported library
     },
 
     resolve: {
-        extensions: ['.js', '.ts']
+        extensions: ['.js', '.ts', '.css']
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
@@ -55,6 +56,15 @@ module.exports = {
                 test: /\.ts$/,
                 loaders: ['awesome-typescript-loader'],
                 exclude: /(node_modules|bower_components)/
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    { loader: 'style-loader' },
+                    {
+                        loader: 'css-loader'
+                    }
+                ]
             }
         ]
     },
