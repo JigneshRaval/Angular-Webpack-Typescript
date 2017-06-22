@@ -704,14 +704,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var DynamicComp2Service = (function () {
-    function DynamicComp2Service(factoryResolver) {
-        this.factoryResolver = factoryResolver;
+    function DynamicComp2Service(_componentFactoryResolver) {
+        this._componentFactoryResolver = _componentFactoryResolver;
     }
     DynamicComp2Service.prototype.setRootViewContainerRef = function (viewContainerRef) {
         this.rootViewContainer = viewContainerRef;
     };
     DynamicComp2Service.prototype.addDynamicComponent = function () {
-        var factory = this.factoryResolver.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_1__dynamic_component2_component__["a" /* DynamicComponent2 */]);
+        var factory = this._componentFactoryResolver.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_1__dynamic_component2_component__["a" /* DynamicComponent2 */]);
         var component = factory.create(this.rootViewContainer.parentInjector);
         this.rootViewContainer.insert(component.hostView);
     };
