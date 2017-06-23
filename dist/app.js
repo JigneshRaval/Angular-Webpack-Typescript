@@ -27,6 +27,8 @@ return webpackJsonp([1],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__dynamic_component2_dynamic_component2_main__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__dynamic_component2_dynamic_component2_service__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__example_growl_notification_bootstrap_growl_module__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__dynamic_dialog_component_dialog_anchor_directive__ = __webpack_require__(481);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__dynamic_dialog_component_dialog_component__ = __webpack_require__(480);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -54,6 +56,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 // Example : Bootstrap Growl Notifications
 //===================================================
 
+// Example : Dynamic Dialog Component
+//===================================================
+
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -71,7 +77,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_3__example_directive_mouse_events_mousewheel_directive__["a" /* MouseWheelDirective */], __WEBPACK_IMPORTED_MODULE_4__example_directive_mouse_events_mousewheel_component__["a" /* MouseWheelDirectiveExampleComponent */],
             __WEBPACK_IMPORTED_MODULE_5__example_dynamic_component_hello_world_component__["a" /* default */], __WEBPACK_IMPORTED_MODULE_6__example_dynamic_component_world_hello_component__["a" /* default */], __WEBPACK_IMPORTED_MODULE_7__example_dynamic_component_dynamic_component__["a" /* default */], __WEBPACK_IMPORTED_MODULE_8__example_dynamic_component_dynamic_component_main__["a" /* default */],
-            __WEBPACK_IMPORTED_MODULE_9__dynamic_component2_dynamic_component2_main__["a" /* DynamicComponent2 */], __WEBPACK_IMPORTED_MODULE_9__dynamic_component2_dynamic_component2_main__["b" /* MainDynamicComponent2 */]
+            __WEBPACK_IMPORTED_MODULE_9__dynamic_component2_dynamic_component2_main__["a" /* DynamicComponent2 */], __WEBPACK_IMPORTED_MODULE_9__dynamic_component2_dynamic_component2_main__["b" /* MainDynamicComponent2 */],
+            __WEBPACK_IMPORTED_MODULE_13__dynamic_dialog_component_dialog_component__["a" /* DialogComponent */], __WEBPACK_IMPORTED_MODULE_12__dynamic_dialog_component_dialog_anchor_directive__["a" /* DialogAnchorDirective */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_10__dynamic_component2_dynamic_component2_service__["a" /* DynamicComp2Service */]
@@ -97,6 +104,8 @@ AppModule = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__example_growl_notification_index__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dynamic_dialog_component_dialog_component__ = __webpack_require__(480);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dynamic_dialog_component_dialog_anchor_directive__ = __webpack_require__(481);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -108,12 +117,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var AppComponent = (function () {
     function AppComponent(bootstrapGrowlService) {
         this.bootstrapGrowlService = bootstrapGrowlService;
         //service.setRootViewContainerRef(viewContainerRef)
         //service.addDynamicComponent()
     }
+    AppComponent.prototype.openDialogBox = function () {
+        this.dialogAnchor.createDialog(__WEBPACK_IMPORTED_MODULE_2__dynamic_dialog_component_dialog_component__["a" /* DialogComponent */]);
+    };
     AppComponent.prototype.addGrowlAlert = function () {
         this.bootstrapGrowlService.addAlert("any custom message", __WEBPACK_IMPORTED_MODULE_1__example_growl_notification_index__["a" /* BootstrapAlertTypes */].SUCCESS);
         this.bootstrapGrowlService.addAlert("any custom message <b>with</b> HTML", __WEBPACK_IMPORTED_MODULE_1__example_growl_notification_index__["a" /* BootstrapAlertTypes */].INFO);
@@ -122,11 +136,16 @@ var AppComponent = (function () {
     };
     return AppComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_29" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_3__dynamic_dialog_component_dialog_anchor_directive__["a" /* DialogAnchorDirective */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__dynamic_dialog_component_dialog_anchor_directive__["a" /* DialogAnchorDirective */])
+], AppComponent.prototype, "dialogAnchor", void 0);
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'my-app',
-        template: "\n        <div>Hello Angular 4</div>\n\n        <mousewheel-directive-example-component></mousewheel-directive-example-component>\n\n        <dynamic-component-main></dynamic-component-main>\n\n\t\t<dynamic-component-main2></dynamic-component-main2>\n\n\t\t<bootstrap-growl [alertCount]=\"3\" [autoClose]=\"10000\"></bootstrap-growl>\n\n        <button (click)=\"addGrowlAlert()\">Test</button>\n    ",
-        styleUrls: []
+        template: "\n        <div>Hello Angular 4</div>\n\n        <mousewheel-directive-example-component></mousewheel-directive-example-component>\n\n        <dynamic-component-main></dynamic-component-main>\n\n\t\t<dynamic-component-main2></dynamic-component-main2>\n\n\t\t<bootstrap-growl [alertCount]=\"3\" [autoClose]=\"10000\"></bootstrap-growl>\n\n        <button (click)=\"addGrowlAlert()\">Test</button>\n\n\t\t<div dialogAnchor></div>\n        <div class=\"open-button\" (click)='openDialogBox()'>Open dialog box</div>\n    ",
+        styleUrls: [],
+        entryComponents: [__WEBPACK_IMPORTED_MODULE_2__dynamic_dialog_component_dialog_component__["a" /* DialogComponent */]]
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__example_growl_notification_index__["b" /* BootstrapGrowlService */]])
 ], AppComponent);
@@ -474,6 +493,85 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_app_module__["a" /* AppModule */]);
+
+
+/***/ }),
+
+/***/ 480:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DialogComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var DialogComponent = (function () {
+    function DialogComponent() {
+        this.close = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["_48" /* EventEmitter */]();
+    }
+    DialogComponent.prototype.onClickedExit = function () {
+        this.close.emit(event);
+    };
+    return DialogComponent;
+}());
+DialogComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+        selector: 'dlg',
+        template: "\n\t\t<div class=\"dialog\">\n\t\t\t<header>\n\t\t\t\t<div class=\"title\">Dialog box</div>\n\t\t\t\t<div class=\"exit-button\" (click)=\"onClickedExit()\">x</div>\n\t\t\t</header>\n\t\t\t<p>Hello, I'm a dialog box!</p>\n\t\t</div>\n\t",
+        styles: ["\n        .dialog {\n            width: 250px;\n            position: absolute;\n            border: 1px solid black;\n            border-radius: 5px;\n            overflow: hidden;\n            position: fixed;\n            left: calc(50% - 125px);\n            top: 100px;\n        }\n        .dialog p {\n            text-align: center;\n        }\n        .dialog header {\n            border-bottom: 1px solid black;\n            font-size: 12px;\n            padding: 5px;\n            display: flex;\n        }\n        .dialog header .title {\n            flex-grow: 1;\n            cursor: default;\n        }\n        .dialog header .exit-button {\n            cursor: pointer;\n            padding: 0 5px;\n        }\n    "]
+    })
+], DialogComponent);
+
+
+
+/***/ }),
+
+/***/ 481:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DialogAnchorDirective; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var DialogAnchorDirective = (function () {
+    function DialogAnchorDirective(viewContainer, componentFactoryResolver) {
+        this.viewContainer = viewContainer;
+        this.componentFactoryResolver = componentFactoryResolver;
+    }
+    DialogAnchorDirective.prototype.createDialog = function (dialogComponent) {
+        this.viewContainer.clear();
+        var dialogComponentFactory = this.componentFactoryResolver.resolveComponentFactory(dialogComponent);
+        var dialogComponentRef = this.viewContainer.createComponent(dialogComponentFactory);
+        dialogComponentRef.instance.close.subscribe(function () {
+            dialogComponentRef.destroy();
+        });
+        return dialogComponentRef;
+    };
+    return DialogAnchorDirective;
+}());
+DialogAnchorDirective = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Directive */])({
+        selector: '[dialogAnchor]'
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* ViewContainerRef */],
+        __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ComponentFactoryResolver */]])
+], DialogAnchorDirective);
+
 
 
 /***/ }),

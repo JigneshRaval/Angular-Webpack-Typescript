@@ -1,6 +1,8 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component, ViewContainerRef, ViewChild } from '@angular/core';
 import { BootstrapGrowlService, BootstrapAlertTypes } from './example-growl-notification/index';
 
+import { DialogComponent } from './dynamic-dialog-component/dialog.component';
+import { DialogAnchorDirective } from './dynamic-dialog-component/dialog-anchor.directive';
 @Component({
 	selector: 'my-app',
 	template: `
@@ -15,13 +17,23 @@ import { BootstrapGrowlService, BootstrapAlertTypes } from './example-growl-noti
 		<bootstrap-growl [alertCount]="3" [autoClose]="10000"></bootstrap-growl>
 
         <button (click)="addGrowlAlert()">Test</button>
+
+		<div dialogAnchor></div>
+        <div class="open-button" (click)='openDialogBox()'>Open dialog box</div>
     `,
-	styleUrls: []
+	styleUrls: [],
+	entryComponents: [DialogComponent]
 })
 export class AppComponent {
 	constructor(private bootstrapGrowlService: BootstrapGrowlService) {
 		//service.setRootViewContainerRef(viewContainerRef)
 		//service.addDynamicComponent()
+	}
+
+	@ViewChild(DialogAnchorDirective) dialogAnchor: DialogAnchorDirective;
+
+	openDialogBox() {
+		this.dialogAnchor.createDialog(DialogComponent);
 	}
 
 	addGrowlAlert() {

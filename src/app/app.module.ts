@@ -24,6 +24,11 @@ import { DynamicComp2Service } from './dynamic-component2/dynamic-component2.ser
 //===================================================
 import { BootstrapGrowlModule } from "./example-growl-notification/bootstrap-growl.module";
 
+// Example : Dynamic Dialog Component
+//===================================================
+import { DialogAnchorDirective } from "./dynamic-dialog-component/dialog-anchor.directive";
+import { DialogComponent } from "./dynamic-dialog-component/dialog.component";
+
 @NgModule({
     imports: [
         // Imports Metadata tells the angular list of other modules used by this module.
@@ -35,7 +40,8 @@ import { BootstrapGrowlModule } from "./example-growl-notification/bootstrap-gro
         AppComponent,
         MouseWheelDirective, MouseWheelDirectiveExampleComponent,
         HelloWorldComponent, WorldHelloComponent, DynamicComponent, MainDynamicComponent,
-        DynamicComponent2, MainDynamicComponent2
+        DynamicComponent2, MainDynamicComponent2,
+        DialogComponent, DialogAnchorDirective
     ],
     providers: [
         DynamicComp2Service
