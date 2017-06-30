@@ -483,21 +483,22 @@ function __asyncValues(o) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(90);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 
-var MyComponent = (function () {
-    function MyComponent() {
-    }
-    return MyComponent;
-}());
+let MyComponent = class MyComponent {
+};
+MyComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* Component */])({
+        selector: 'my-component',
+        template: `<h1>My Component 0101</h1>`
+    })
+], MyComponent);
 
-MyComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* Component */], args: [{
-                selector: 'my-component',
-                template: "<h1>My Component 0101</h1>"
-            },] },
-];
-/** @nocollapse */
-MyComponent.ctorParameters = function () { return []; };
 //# sourceMappingURL=mycomponent.component.js.map
 
 /***/ }),
@@ -6695,31 +6696,32 @@ exports.tryCatch = tryCatch;
 /**
  * Created by Noémi Salaün on 10/11/2016.
  */
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 
 
 
-var MyMainModule = (function () {
-    function MyMainModule() {
-    }
-    return MyMainModule;
-}());
+let MyMainModule = class MyMainModule {
+};
+MyMainModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_2__angular_common__["a" /* CommonModule */]
+        ],
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_1__mycomponent_component__["a" /* MyComponent */]
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_1__mycomponent_component__["a" /* MyComponent */]
+        ],
+        schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* CUSTOM_ELEMENTS_SCHEMA */]]
+    })
+], MyMainModule);
 
-MyMainModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */], args: [{
-                imports: [
-                    __WEBPACK_IMPORTED_MODULE_2__angular_common__["a" /* CommonModule */]
-                ],
-                declarations: [
-                    __WEBPACK_IMPORTED_MODULE_1__mycomponent_component__["a" /* MyComponent */]
-                ],
-                exports: [
-                    __WEBPACK_IMPORTED_MODULE_1__mycomponent_component__["a" /* MyComponent */]
-                ],
-                schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* CUSTOM_ELEMENTS_SCHEMA */]]
-            },] },
-];
-/** @nocollapse */
-MyMainModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=index.js.map
 
 /***/ }),

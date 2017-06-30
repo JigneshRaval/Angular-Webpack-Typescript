@@ -43,8 +43,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.js', '.ts', '.css'],
-        modules: [helpers.root('src'), helpers.root('node_modules')]
+        extensions: ['.js', '.ts', '.css']
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
