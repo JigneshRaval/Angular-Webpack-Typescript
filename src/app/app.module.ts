@@ -23,7 +23,7 @@ import { DynamicComp2Service } from './dynamic-component2/dynamic-component2.ser
 // Example : Bootstrap Growl Notifications
 //===================================================
 import { BootstrapGrowlModule } from "./example-growl-notification/bootstrap-growl.module";
-import { MyMainModule } from "link-test";
+import { MyMainModule } from "../../node_modules/link-test";
 
 // Example : Dynamic Dialog Component
 //===================================================
