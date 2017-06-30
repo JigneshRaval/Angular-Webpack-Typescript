@@ -23,6 +23,7 @@ import { DynamicComp2Service } from './dynamic-component2/dynamic-component2.ser
 // Example : Bootstrap Growl Notifications
 //===================================================
 import { BootstrapGrowlModule } from "./example-growl-notification/bootstrap-growl.module";
+import { MyMainModule } from "link-test";
 
 // Example : Dynamic Dialog Component
 //===================================================
@@ -33,7 +34,8 @@ import { DialogComponent } from "./dynamic-dialog-component/dialog.component";
     imports: [
         // Imports Metadata tells the angular list of other modules used by this module.
         BrowserModule,
-        BootstrapGrowlModule
+        BootstrapGrowlModule,
+        MyMainModule
     ],
     declarations: [
         // Declaration Metadata lists the components, directives , services etc that are part of this module.

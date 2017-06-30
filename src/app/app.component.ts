@@ -3,6 +3,9 @@ import { BootstrapGrowlService, BootstrapAlertTypes } from './example-growl-noti
 
 import { DialogComponent } from './dynamic-dialog-component/dialog.component';
 import { DialogAnchorDirective } from './dynamic-dialog-component/dialog-anchor.directive';
+
+import { MyComponent } from 'link-test';
+
 @Component({
 	selector: 'my-app',
 	template: `
@@ -20,6 +23,7 @@ import { DialogAnchorDirective } from './dynamic-dialog-component/dialog-anchor.
 
 		<div dialogAnchor></div>
         <div class="open-button" (click)='openDialogBox()'>Open dialog box</div>
+		<my-component></my-component>
     `,
 	styleUrls: [],
 	entryComponents: [DialogComponent]
