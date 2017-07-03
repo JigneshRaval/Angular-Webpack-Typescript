@@ -17,19 +17,19 @@
     "@angular/platform-browser": "^4.1.3",
     "@angular/platform-browser-dynamic": "^4.1.3",
     "@angular/router": "^4.1.3",
+    "copy-webpack-plugin": "^4.0.1",
     "core-js": "^2.4.1",
-    "link-test": "file:///C:\\jr\\__UPointNext\\project\\link-test\\link-test-2.0.1.tgz",
-    "ngx-bootstrap-growl": "0.0.6",
-    "npm-link-test": "file:///C:\\jr\\__UPointNext\\project\\npm-link-test\\npm-link-test-2.0.1.tgz",
     "reflect-metadata": "^0.1.10",
     "rxjs": "^5.4.0",
     "zone.js": "^0.8.11"
   },
   "devDependencies": {
+    "@angular/compiler-cli": "^4.1.3",
     "awesome-typescript-loader": "^3.1.3",
-    "typescript": "^2.3.3",
-    "webpack": "^2.6.1",
     "css-loader": "^0.28.4",
-    "style-loader": "^0.18.2"
-  }
+    "style-loader": "^0.18.2",
+    "typescript": "2.2.0",
+    "webpack": "^2.6.1"
+  },
+  "module": "main"
 }

@@ -4,7 +4,7 @@ import { BootstrapGrowlService, BootstrapAlertTypes } from './example-growl-noti
 import { DialogComponent } from './dynamic-dialog-component/dialog.component';
 import { DialogAnchorDirective } from './dynamic-dialog-component/dialog-anchor.directive';
 
-import { MyComponent } from '../../node_modules/link-test';
+import { MyComponent } from 'npm-link-test';
 
 @Component({
 	selector: 'my-app',
