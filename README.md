@@ -37,7 +37,13 @@ Create `package.json` file in this project folder
 Install and save Angular Modules and all it's dependancies using following NPM command
 
 ```
-npm install @angular/common @angular/compiler @angular/core @angular/forms @angular/http @angular/platform-browser @angular/platform-browser-dynamic @angular/router core-js reflect-metadata rxjs zone.js --save
+npm install @angular/core @angular/common @angular/compiler @angular/forms @angular/http @angular/platform-browser @angular/platform-browser-dynamic @angular/router core-js reflect-metadata rxjs zone.js --save
+```
+
+Install typescript, webpack and other dependencies.
+
+```
+npm install typescript webpack @angular/compiler-cli awesome-typescript-loader --save-dev
 ```
 
 ```
@@ -201,9 +207,9 @@ import { Component } from '@angular/core';
     selector: 'my-app',
     template: `<div>Hello Angular 4</div>`,
     styleUrls: []
-}) 
+})
 export class AppComponent { }
- 
+
 ```
 
 ```
