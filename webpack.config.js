@@ -3,6 +3,14 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 //const rootDir = path.resolve(__dirname, '..');
 
+// Helper functions
+/*
+var ROOT = path.resolve(__dirname, '..');
+function root(args) {
+    args = Array.prototype.slice.call(arguments, 0);
+    return path.join.apply(path, [ROOT].concat(args));
+}
+*/
 module.exports = {
     entry: {
         'app': './src/main.ts',
@@ -20,7 +28,7 @@ module.exports = {
         //filename: "[chunkhash].js", // for long term caching
         // the filename template for entry chunks
 
-        publicPath: "/assets/", // string
+        publicPath: "/", // string
         //publicPath: "",
         //publicPath: "https://cdn.example.com/",
         // the url to the output directory resolved relative to the HTML page
@@ -41,14 +49,32 @@ module.exports = {
 		*/
         // the type of the exported library
     },
+    // require those dependencies but don't bundle them
+    //externals: [/^\@angular\//, /^rxjs\//],
 
     resolve: {
-        extensions: ['.js', '.ts', '.css']
+        extensions: ['.js', '.ts', '.css'],
+        // This will resolve module path when using "npm link"
+        alias: { "@angular": path.join(__dirname, "node_modules/@angular") }
+        //modules: ['src', 'node_modules']
+        // OR this (surprisingly both worked for me):
+        //alias: { "my-package": path.join(__dirname, "../my-package" },
+
+        // You don't really need the resolve.fallback unless you do: import "something"
+        // that is not in my-package's package.json dependencies.
+        //fallback: path.join(__dirname, "node_modules")
+    },
+    resolveLoader: {
+        modules: ["node_modules"] // This will resolve module path when using "npm link"
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'libs', 'polyfills']
         })
+        /*,new webpack.ContextReplacementPlugin(
+            /angular(\\|\/)core(\\|\/)@angular/,
+            root('./src')
+        )*/
     ],
     module: {
         rules: [
